@@ -18,7 +18,7 @@ function HomePage() {
                 <div className="flex justify-start mb-6">
                     <Link
                         to="/create"
-                        className="bg-blue-400 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+                        className="bg-orange-400 text-white py-2 px-4 rounded hover:bg-orange-500 transition"
                     >
                         Create Post
                     </Link>
