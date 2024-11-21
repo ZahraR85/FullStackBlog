@@ -1,11 +1,14 @@
 import express from 'express';
 import cors from 'cors';
 import db from './db/index.js'; // Database and models
-
+//import debug from 'debug';
+//debug.enable('startup');
 const { Post } = db; // Destructure Post model
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+//const startupDebug = debug("startup"); 
 
 // Get all posts
 app.get('/posts', async (req, res) => {
@@ -16,7 +19,7 @@ app.get('/posts', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
+//startupDebug("hi"); 
 // Get a single post by ID
 app.get('/posts/:id', async (req, res) => {
     try {
