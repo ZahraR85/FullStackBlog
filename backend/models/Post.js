@@ -36,7 +36,12 @@ const Post = sequelize.define(
         timestamps: false, // Disable createdAt/updatedAt
     }
 );
-//Post.sync();
-//Post.sync({force: true});
-//Post.sync({alter: true});
+Post.sync()
+    .then(() => {
+        console.log('Posts table has been recreated.');
+    })
+    .catch((error) => {
+        console.error('Error recreating posts table:', error.message);
+    });
+
 export default Post;
