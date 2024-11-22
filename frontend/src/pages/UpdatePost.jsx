@@ -99,21 +99,19 @@ function UpdatePost() {
                         className="w-full px-4 py-2 border rounded"
                     />
                 </div>
-                <div className="flex justify-between">
                     <button
                         type="submit"
-                        className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                        className="bg-green-500 text-white mt-2 px-4 py-2 rounded hover:bg-green-700"
                     >
                         Update
                     </button>
                     <button
                         type="button"
                         onClick={() => navigate(`/posts/${id}`)}
-                        className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+                        className="bg-gray-500 text-white ml-4 px-4 py-2 rounded hover:bg-gray-600"
                     >
                         Cancel
                     </button>
-                </div>
             </form>
         </div>
     );

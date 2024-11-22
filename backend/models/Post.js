@@ -37,11 +37,11 @@ const Post = sequelize.define(
     }
 );
 Post.sync()
-    .then(() => {
-        console.log('Posts table has been recreated.');
+   /* .then(() => {
+        console.log('Posts table has been created.');
     })
     .catch((error) => {
         console.error('Error recreating posts table:', error.message);
     });
-
+*/
 export default Post;
