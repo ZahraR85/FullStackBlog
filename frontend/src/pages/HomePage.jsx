@@ -3,13 +3,30 @@ import { Link } from 'react-router-dom';
 
 function HomePage() {
     const [posts, setPosts] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/posts')
-            .then((response) => response.json())
-            .then((data) => setPosts(data))
-            .catch((error) => console.error('Error fetching posts:', error));
+        const fetchPosts = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/posts');
+                const data = await response.json();
+                if (Array.isArray(data)) {
+                    setPosts(data);
+                } else {
+                    setError('Unexpected response format.');
+                }
+            } catch (err) {
+                console.error('Error fetching posts:', err.message);
+                setError(err.message);
+            }
+        };
+
+        fetchPosts();
     }, []);
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     return (
         <div className="flex justify-center items-start pt-20 min-h-screen bg-gray-100">
@@ -18,9 +35,9 @@ function HomePage() {
                 <div className="flex justify-start mb-6">
                     <Link
                         to="/create"
-                        className="bg-orange-400 text-white py-2 px-4 rounded hover:bg-orange-500 transition"
+                        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition"
                     >
-                        Create Post
+                        Create New Post
                     </Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

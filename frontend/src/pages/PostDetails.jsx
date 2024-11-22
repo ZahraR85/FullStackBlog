@@ -46,19 +46,19 @@ function PostDetails() {
                     <div className="flex space-x-4">
                         <button
                             onClick={handleDelete}
-                            className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition"
+                            className="bg-red-500 text-white py-2 px-6 rounded hover:bg-red-700 transition"
                         >
                             Delete
                         </button>
                         <button
                             onClick={() => navigate(`/edit/${id}`)}
-                            className="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 transition"
+                            className="bg-green-500 text-white py-2 px-6 rounded hover:bg-green-700 transition"
                         >
                             Edit
                         </button>
                         <button
                             onClick={() => navigate('/')}
-                            className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 transition"
+                            className="bg-gray-500 text-white py-2 px-6 rounded hover:bg-gray-600 transition"
                         >
                             Back
                         </button>
