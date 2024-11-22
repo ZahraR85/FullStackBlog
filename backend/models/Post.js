@@ -37,7 +37,7 @@ const Post = sequelize.define(
     }
 );
 Post.sync()
-   /* .then(() => {
+/* .then(() => {
         console.log('Posts table has been created.');
     })
     .catch((error) => {
